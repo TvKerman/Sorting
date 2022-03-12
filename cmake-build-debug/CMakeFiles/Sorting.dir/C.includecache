@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/Git/Sorting/libs/algorithms/algorithm.h
+stdio.h
+-
+
 D:/Git/Sorting/libs/algorithms/array/array.h
 stddef.h
 -
@@ -19,6 +23,8 @@ stdbool.h
 -
 time.h
 -
+libs/algorithms/algorithm.h
+D:/Git/Sorting/libs/algorithms/algorithm.h
 libs/algorithms/array/array.h
 D:/Git/Sorting/libs/algorithms/array/array.h
 

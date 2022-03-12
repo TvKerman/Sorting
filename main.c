@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <time.h>
+#include "libs/algorithms/algorithm.h"
 #include "libs/algorithms/array/array.h"
 
 #define ARRAY_SIZE(a) sizeof(a) / sizeof(a[0])
@@ -121,7 +122,10 @@ void timeExperiment () {
 }
 
 int main() {
-    timeExperiment();
+    //timeExperiment();
 
+    //int a[] = {1};
+    //exchangeSorting(a, 1);
+    //outputArray_(a, 1);
     return 0;
 }
