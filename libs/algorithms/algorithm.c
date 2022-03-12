@@ -37,3 +37,16 @@ void selectionSort(int *a, size_t size) {
         swap(&a[minIndex], &a[i]);
     }
 }
+
+void insertionSort(int *a, size_t size) {
+    for (long long i = 1; i < size; i++) {
+        int temp = a[i];
+        long long j = i - 1;
+
+        while (j > -1 && a[j] > temp) {
+            a[j + 1] = a[j];
+            j--;
+        }
+        a[j + 1] = temp;
+    }
+}

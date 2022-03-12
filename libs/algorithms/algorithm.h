@@ -15,4 +15,6 @@ void exchangeSort(int *a, size_t size);
 
 void selectionSort(int *a, size_t size);
 
+void insertionSort(int *a, size_t size);
+
 #endif //COURSE_ALGORITHM_H

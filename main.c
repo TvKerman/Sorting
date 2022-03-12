@@ -127,6 +127,7 @@ int main() {
     //int a[] = {1, 5, 9, 3, 3, 0};
     //exchangeSorting(a, 6);
     //selectionSort(a, 6);
+    //insertionSort(a, 6);
     //outputArray_(a, 6);
     return 0;
 }
