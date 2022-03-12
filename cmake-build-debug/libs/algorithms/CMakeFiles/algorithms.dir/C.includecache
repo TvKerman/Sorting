@@ -13,4 +13,6 @@ D:/Git/Sorting/libs/algorithms/algorithm.h
 D:/Git/Sorting/libs/algorithms/algorithm.h
 stdio.h
 -
+stdbool.h
+-
 

@@ -50,3 +50,21 @@ void insertionSort(int *a, size_t size) {
         a[j + 1] = temp;
     }
 }
+
+void combSort(int *a, size_t size) {
+    size_t step = size;
+    bool swapped = true;
+    while (step > 1 || swapped) {
+        if (step > 1) {
+            step /= 1.24733;
+        }
+
+        swapped = false;
+        for (size_t i = 0, j = i + step; j < size; ++ i, ++ j) {
+            if (a[i] > a[j]) {
+                swap(&a[i], &a[j]);
+                swapped = true;
+            }
+        }
+    }
+}
