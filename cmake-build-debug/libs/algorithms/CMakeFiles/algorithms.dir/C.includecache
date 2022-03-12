@@ -9,6 +9,10 @@
 D:/Git/Sorting/libs/algorithms/algorithm.c
 algorithm.h
 D:/Git/Sorting/libs/algorithms/algorithm.h
+malloc.h
+-
+memory.h
+-
 
 D:/Git/Sorting/libs/algorithms/algorithm.h
 stdio.h

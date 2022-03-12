@@ -124,12 +124,13 @@ void timeExperiment () {
 int main() {
     //timeExperiment();
 
-    //int a[] = {1, 5, 9, 3, 3, 0};
+    int a[] = {1, 5, 3, 0, 1000, -256, 300, 256, 9, 3, -50, -30, -5};
     //exchangeSorting(a, 6);
     //selectionSort(a, 6);
     //insertionSort(a, 6);
     //combSort(a, 6);
     //shellSort(a, 6);
-    //outputArray_(a, 6);
+    digitalSorting(a, 13);
+    outputArray_(a, 13);
     return 0;
 }
