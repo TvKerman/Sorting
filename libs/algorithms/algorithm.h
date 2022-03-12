@@ -20,4 +20,6 @@ void insertionSort(int *a, size_t size);
 
 void combSort(int *a, size_t size);
 
+void shellSort(int *a, size_t size);
+
 #endif //COURSE_ALGORITHM_H

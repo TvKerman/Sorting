@@ -68,3 +68,15 @@ void combSort(int *a, size_t size) {
         }
     }
 }
+
+void shellSort(int *a, size_t size) {
+    for (long long s = size / 2; s > 0; s /= 2) {
+        for (long long i = s; i < size; i++) {
+            long long j = i - s;
+            while (j >= 0 && a[j] > a[j + s]) {
+                swap(&a[j], &a[j + s]);
+                j -= s;
+            }
+        }
+    }
+}
