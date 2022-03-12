@@ -124,8 +124,9 @@ void timeExperiment () {
 int main() {
     //timeExperiment();
 
-    //int a[] = {1};
-    //exchangeSorting(a, 1);
-    //outputArray_(a, 1);
+    //int a[] = {1, 5, 9, 3, 3, 0};
+    //exchangeSorting(a, 6);
+    //selectionSort(a, 6);
+    //outputArray_(a, 6);
     return 0;
 }
