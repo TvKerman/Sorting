@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Git/Sorting/libs/algorithms/array/array.h
+stddef.h
+-
+
+D:/Git/Sorting/main.c
+stdlib.h 
+-
+stdio.h
+-
+stdbool.h
+-
+time.h
+-
+libs/algorithms/array/array.h
+D:/Git/Sorting/libs/algorithms/array/array.h
+
