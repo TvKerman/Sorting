@@ -88,6 +88,12 @@ void checkTime(void (*sortFunc)(int *, size_t), void (*generateFunc)(int *, size
 void timeExperiment () {
     // описание функций сортировки
     SortFunc sorts [] = {
+            {exchangeSort, "exchangeSort"},
+            {selectionSort, "selectionSort"},
+            {insertionSort, "insertionSort"},
+            {combSort, "combSort"},
+            {shellSort, "shellSort"},
+            {digitalSort, "digitalSort"}
             //{ selectionSort , " selectionSort "} ,
             //{ insertionSort , " insertionSort "} ,
             // вы добавите свои сортировки
@@ -97,11 +103,11 @@ void timeExperiment () {
     // описание функций генерации
     GeneratingFunc generatingFuncs [] = {
             // генерируется случайный массив
-            //{ generateRandomArray , " random "} ,
+            {generateRandomArray, "random"},
             // генерируется массив 0, 1, 2, ..., n - 1
-            //{ generateOrderedArray , " ordered "} ,
+            {generateOrderedArray, "ordered"},
             // генерируется массив n - 1, n - 2, ..., 0
-            //{ generateOrderedBackwards , " orderedBackwards "}
+            {generateOrderedBackwards, "orderedBackwards"}
             };
     const unsigned CASES_N = ARRAY_SIZE(generatingFuncs);
 
@@ -112,8 +118,8 @@ void timeExperiment () {
         for (int i = 0; i < FUNCS_N ; i ++) {
             for (int j = 0; j < CASES_N ; j ++) {
                 // генерация имени файла
-                static char filename [128];
-                sprintf(filename, "%s_%s_time ", sorts[i].name, generatingFuncs[j].name);
+                char filename[128];
+                sprintf(filename, "%s_%s_time", sorts[i].name, generatingFuncs[j].name);
                 checkTime(sorts[i].sort, generatingFuncs[j].generate, size, filename);
             }
         }
@@ -122,7 +128,7 @@ void timeExperiment () {
 }
 
 int main() {
-    //timeExperiment();
+    timeExperiment();
 
     //int a[] = {1, 5, 3, 0, 1000, -256, 300, 256, 9, 3, -50, -30, -5};
     //exchangeSorting(a, 6);
