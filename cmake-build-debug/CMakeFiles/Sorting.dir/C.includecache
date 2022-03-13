@@ -11,6 +11,10 @@ stdio.h
 -
 stdbool.h
 -
+stdlib.h
+-
+time.h
+-
 
 D:/Git/Sorting/libs/algorithms/array/array.h
 stddef.h

@@ -7,6 +7,8 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
+#include <time.h>
 
 void swap(int *a, int *b);
 
@@ -22,6 +24,12 @@ void combSort(int *a, size_t size);
 
 void shellSort(int *a, size_t size);
 
-void digitalSorting(int *a, size_t size);
+void digitalSort(int *a, size_t size);
+
+void generateRandomArray(int *a, size_t size);
+
+void generateOrderedArray(int *a, size_t size);
+
+void generateOrderedBackwards(int *a, size_t size);
 
 #endif //COURSE_ALGORITHM_H

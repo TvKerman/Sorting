@@ -113,7 +113,7 @@ void timeExperiment () {
             for (int j = 0; j < CASES_N ; j ++) {
                 // генерация имени файла
                 static char filename [128];
-                sprintf (filename, "%s_%s_time ", sorts[i].name, generatingFuncs[j].name);
+                sprintf(filename, "%s_%s_time ", sorts[i].name, generatingFuncs[j].name);
                 checkTime(sorts[i].sort, generatingFuncs[j].generate, size, filename);
             }
         }
@@ -124,13 +124,21 @@ void timeExperiment () {
 int main() {
     //timeExperiment();
 
-    int a[] = {1, 5, 3, 0, 1000, -256, 300, 256, 9, 3, -50, -30, -5};
+    //int a[] = {1, 5, 3, 0, 1000, -256, 300, 256, 9, 3, -50, -30, -5};
     //exchangeSorting(a, 6);
     //selectionSort(a, 6);
     //insertionSort(a, 6);
     //combSort(a, 6);
     //shellSort(a, 6);
-    digitalSorting(a, 13);
-    outputArray_(a, 13);
+    //digitalSort(a, 13);
+    //outputArray_(a, 13);
+
+    //int a[6];
+    //generateRandomArray(a, 6);
+    //outputArray_(a, 6);
+    //generateOrderedArray(a, 6);
+    //outputArray_(a, 6);
+    //generateOrderedBackwards(a, 6);
+    //outputArray_(a, 6);
     return 0;
 }

@@ -87,7 +87,7 @@ void shellSort(int *a, size_t size) {
     }
 }
 
-void digitalSorting(int *a, size_t size) {
+void digitalSort(int *a, size_t size) {
     int countDischarge = sizeof(int);
     int currentDischarge = 0;
 
@@ -133,4 +133,25 @@ void digitalSorting(int *a, size_t size) {
     }
 
     free(b);
+}
+
+void generateRandomArray(int *a, size_t size) {
+    srand(time(NULL));
+    for (size_t i = 0; i < size; i++) {
+        a[i] = rand();
+    }
+}
+
+void generateOrderedArray(int *a, size_t size) {
+    a[0] = -((int)size / 2);
+    for (size_t i = 1; i < size; i++) {
+        a[i] = a[i - 1] + 1;
+    }
+}
+
+void generateOrderedBackwards(int *a, size_t size) {
+    a[0] = ((int)size / 2) - (size % 2 == 0) * 1;
+    for (size_t i = size, j = 1; i > 0; i--, j++) {
+        a[j] = a[j - 1] - 1;
+    }
 }
