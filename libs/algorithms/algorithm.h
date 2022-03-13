@@ -32,4 +32,16 @@ void generateOrderedArray(int *a, size_t size);
 
 void generateOrderedBackwards(int *a, size_t size);
 
+long long getExchangeSortNComp(int *a, size_t size);
+
+long long getSelectionSortNComp(int *a, size_t size);
+
+long long getInsertionSortNComp(int *a, size_t size);
+
+long long getCombSortNComp(int *a, size_t size);
+
+long long getShellSortNComp(int *a, size_t size);
+
+long long getDigitalSortNComp(int *a, size_t size);
+
 #endif //COURSE_ALGORITHM_H
