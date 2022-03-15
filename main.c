@@ -58,7 +58,7 @@ void checkTime(void (*sortFunc)(int *, size_t), void (*generateFunc)(int *, size
     static size_t runCounter = 1;
 
     // генерация последовательности
-    static int innerBuffer[1000000];
+    static int innerBuffer[20000000];
     generateFunc(innerBuffer, size);
     printf("Run #%zu| ", runCounter++);
     printf("Name: %s\n", experimentName);
@@ -92,7 +92,7 @@ void checkTime(void (*sortFunc)(int *, size_t), void (*generateFunc)(int *, size
         }
 }
 
-void timeExperiment () {
+void timeExperimentSlowSorting() {
     // описание функций сортировки
     SortFunc sorts [] = {
             {exchangeSort, "exchangeSort"},
@@ -120,6 +120,45 @@ void timeExperiment () {
 
     // запись статистики в файл
     for (size_t size = 10000; size <= 100000; size += 10000) {
+        printf (" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
+        printf (" Size : %d\n", size);
+        for (int i = 0; i < FUNCS_N ; i++) {
+            for (int j = 0; j < CASES_N ; j++) {
+                // генерация имени файла
+                char filename[128];
+                sprintf(filename, "%s_%s_time", sorts[i].name, generatingFuncs[j].name);
+                checkTime(sorts[i].sort, generatingFuncs[j].generate, size, filename);
+            }
+        }
+        printf ("\n") ;
+    }
+}
+
+void timeExperimentQuickSorting() {
+    // описание функций сортировки
+    SortFunc sorts [] = {
+            {combSort, "combSort"},
+            {shellSort, "shellSort"},
+            {digitalSort, "digitalSort"}
+            //{ selectionSort , " selectionSort "} ,
+            //{ insertionSort , " insertionSort "} ,
+            // вы добавите свои сортировки
+    };
+    const unsigned FUNCS_N = ARRAY_SIZE(sorts);
+
+    // описание функций генерации
+    GeneratingFunc generatingFuncs [] = {
+            // генерируется случайный массив
+            {generateRandomArray, "random"},
+            // генерируется массив 0, 1, 2, ..., n - 1
+            {generateOrderedArray, "ordered"},
+            // генерируется массив n - 1, n - 2, ..., 0
+            {generateOrderedBackwards, "orderedBackwards"}
+    };
+    const unsigned CASES_N = ARRAY_SIZE(generatingFuncs);
+
+    // запись статистики в файл
+    for (size_t size = 200000; size <= 2000000; size += 200000) {
         printf (" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
         printf (" Size : %d\n", size);
         for (int i = 0; i < FUNCS_N ; i++) {
@@ -237,26 +276,10 @@ void measurementForTaskNumber2() {
 }
 
 int main() {
-    //timeExperiment();
+    //timeExperimentSlowSorting();
+    timeExperimentQuickSorting();
     //comparisonsExperiment();
 
-    measurementForTaskNumber2();
-
-    //int a[] = {1, 5, 3, 0, 1000, -256, 300, 256, 9, 3, -50, -30, -5};
-    //exchangeSorting(a, 6);
-    //selectionSort(a, 6);
-    //insertionSort(a, 6);
-    //combSort(a, 6);
-    //shellSort(a, 6);
-    //digitalSort(a, 13);
-    //outputArray_(a, 13);
-
-    //int a[6];
-    //generateRandomArray(a, 6);
-    //outputArray_(a, 6);
-    //generateOrderedArray(a, 6);
-    //outputArray_(a, 6);
-    //generateOrderedBackwards(a, 6);
-    //outputArray_(a, 6);
+    //measurementForTaskNumber2();
     return 0;
 }
