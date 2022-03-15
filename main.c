@@ -58,7 +58,7 @@ void checkTime(void (*sortFunc)(int *, size_t), void (*generateFunc)(int *, size
     static size_t runCounter = 1;
 
     // генерация последовательности
-    static int innerBuffer[100000];
+    static int innerBuffer[1000000];
     generateFunc(innerBuffer, size);
     printf("Run #%zu| ", runCounter++);
     printf("Name: %s\n", experimentName);
@@ -212,9 +212,35 @@ void comparisonsExperiment() {
     }
 }
 
+void measurementForTaskNumber2() {
+    SortFunc sorts [] = {
+            {shellSort,     "shellSort"}
+    };
+
+    GeneratingFunc generatingFuncs [] = {
+            {generateRandomArray, "random"},
+            {generateOrderedArray, "ordered"},
+            {generateOrderedBackwards, "orderedBackwards"}
+    };
+    const unsigned CASES_N = ARRAY_SIZE(generatingFuncs);
+
+    int size = 1000000;
+    printf (" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n");
+    printf (" Size : %d\n", size);
+
+    for (int j = 0; j < CASES_N; j++) {
+        // генерация имени файла
+        char filename[128];
+        sprintf(filename, "%s_%s_time_measurement", sorts[0].name, generatingFuncs[j].name);
+        checkTime(sorts[0].sort, generatingFuncs[j].generate, size, filename);
+    }
+}
+
 int main() {
     //timeExperiment();
-    comparisonsExperiment();
+    //comparisonsExperiment();
+
+    measurementForTaskNumber2();
 
     //int a[] = {1, 5, 3, 0, 1000, -256, 300, 256, 9, 3, -50, -30, -5};
     //exchangeSorting(a, 6);
